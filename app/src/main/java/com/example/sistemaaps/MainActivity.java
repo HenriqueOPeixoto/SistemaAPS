@@ -2,8 +2,11 @@ package com.example.sistemaaps;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.sistemaaps.utils.Cronometro;
@@ -19,5 +22,15 @@ public class MainActivity extends AppCompatActivity {
 
         Cronometro cronometro = new Cronometro(txtTempoDecorrido);
         cronometro.start();
+
+        // Chamada da atividade de desocupação
+        Button btnDesocuparSuite = (Button) findViewById(R.id.btnDesocupar);
+        btnDesocuparSuite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DesocuparSuite.class));
+            }
+        });
+
     }
 }
