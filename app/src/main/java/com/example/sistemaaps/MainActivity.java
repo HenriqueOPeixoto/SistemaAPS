@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.sistemaaps.utils.Stopwatch;
+import com.example.sistemaaps.utils.Cronometro;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView txtTempoDecorrido = (TextView) findViewById(R.id.txtTempoDecorrido);
 
-        Stopwatch sw = new Stopwatch(txtTempoDecorrido);
-        sw.start();
+        Cronometro cronometro = new Cronometro(txtTempoDecorrido);
+        cronometro.start();
     }
 }
