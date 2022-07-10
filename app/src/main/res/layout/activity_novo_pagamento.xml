@@ -49,7 +49,8 @@
         android:layout_width="211dp"
         android:layout_height="71dp"
         android:layout_marginTop="30dp"
-        android:backgroundTint="#C9B1B1"
+        android:backgroundTint="#837373"
+        android:enabled="false"
         android:fontFamily="@font/barlow"
         android:text="Novo Pagamento"
         android:textColor="@color/black"
@@ -62,7 +63,7 @@
         android:layout_width="211dp"
         android:layout_height="71dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#C9B1B1"
+        android:backgroundTint="#837373"
         android:fontFamily="@font/barlow"
         android:text="Finalizar Pagamento"
         android:textColor="@color/black"
@@ -71,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNovoPagamento" />
 
     <Button
-        android:id="@+id/btnChamarRecepcaoPgto"
+        android:id="@+id/btnChamarRecepcao"
         android:layout_width="211dp"
         android:layout_height="71dp"
         android:layout_marginTop="16dp"
@@ -89,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="Pagamentos Adicionados:"
+        android:text="Qual a forma de pagamento?"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/divider4"
@@ -104,7 +105,7 @@
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/divider4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnChamarRecepcaoPgto" />
+        app:layout_constraintTop_toBottomOf="@+id/btnChamarRecepcao" />
 
     <TextView
         android:id="@+id/textView7"
@@ -130,60 +131,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="50dp"
-        android:fontFamily="@font/barlow"
-        android:text="Total:"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/divider4" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginBottom="48dp"
-        android:fontFamily="@font/barlow"
-        android:text="Restante:"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="48dp"
-        android:fontFamily="@font/barlow"
-        android:text="R$ 0,00"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="48dp"
-        android:fontFamily="@font/barlow"
-        android:text="R$ 0,00"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView9" />
-
     <Button
-        android:id="@+id/btnVoltarNovoPgto"
+        android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:backgroundTint="#C9B1B1"
@@ -194,5 +143,47 @@
         app:layout_constraintBottom_toTopOf="@+id/divider3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDebito"
+        android:layout_width="225dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#C9B1B1"
+        android:fontFamily="@font/barlow"
+        android:text="Cartão (débito)"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider4"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/btnCredito"
+        android:layout_width="225dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#C9B1B1"
+        android:fontFamily="@font/barlow"
+        android:text="Cartão (crédito)"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider4"
+        app:layout_constraintTop_toBottomOf="@+id/btnDebito" />
+
+    <Button
+        android:id="@+id/btnDinheiro"
+        android:layout_width="225dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#C9B1B1"
+        android:fontFamily="@font/barlow"
+        android:text="Dinheiro"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider4"
+        app:layout_constraintTop_toBottomOf="@+id/btnCredito" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
