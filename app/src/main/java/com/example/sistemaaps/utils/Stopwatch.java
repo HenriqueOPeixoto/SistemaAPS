@@ -46,6 +46,17 @@ public class Stopwatch implements Runnable {
                 }
             });
 
+            /**
+             * Isso é para impedir o timer de ser calculado a cada frame,
+             * pois isso exige muito da CPU.
+             * Só é necessário atualizar o timer a cada segundo.
+             */
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
