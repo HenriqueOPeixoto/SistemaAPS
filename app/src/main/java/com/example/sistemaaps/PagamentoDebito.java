@@ -3,6 +3,7 @@ package com.example.sistemaaps;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +25,25 @@ public class PagamentoDebito extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        TextView txtMoeda = (TextView) findViewById(R.id.txtMoeda);
+        txtMoeda.setVisibility(View.GONE);
+
+        TextView txtFieldParcial = (TextView) findViewById(R.id.txtFieldParcial);
+        txtFieldParcial.setVisibility(View.GONE);
+
+        Button btnConfirmar = (Button) findViewById(R.id.btnConfirmar);
+        btnConfirmar.setVisibility(View.GONE);
+
+        Button btnParcial = (Button) findViewById(R.id.btnParcial);
+        btnParcial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txtMoeda.setVisibility(View.VISIBLE);
+                txtFieldParcial.setVisibility(View.VISIBLE);
+                btnConfirmar.setVisibility(View.VISIBLE);
             }
         });
     }
