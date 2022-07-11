@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="Qual a forma de pagamento?"
+        android:text="Quanto vai pagar no cartão?"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/divider4"
@@ -145,13 +145,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnDebito"
+        android:id="@+id/btnTotal"
         android:layout_width="225dp"
         android:layout_height="65dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="#C9B1B1"
         android:fontFamily="@font/barlow"
-        android:text="Cartão (débito)"
+        android:text="Total"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -159,31 +159,62 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/btnCredito"
+        android:id="@+id/btnParcial"
         android:layout_width="225dp"
         android:layout_height="65dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="#C9B1B1"
         android:fontFamily="@font/barlow"
-        android:text="Cartão (crédito)"
+        android:text="Parcial"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider4"
-        app:layout_constraintTop_toBottomOf="@+id/btnDebito" />
+        app:layout_constraintTop_toBottomOf="@+id/btnTotal" />
 
     <Button
-        android:id="@+id/btnDinheiro"
+        android:id="@+id/btnConfirmar"
         android:layout_width="225dp"
         android:layout_height="65dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#C9B1B1"
         android:fontFamily="@font/barlow"
-        android:text="Dinheiro"
+        android:text="Confirmar"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toEndOf="@+id/divider4"
-        app:layout_constraintTop_toBottomOf="@+id/btnCredito" />
+        app:layout_constraintTop_toBottomOf="@+id/txtFieldParcial" />
+
+    <EditText
+        android:id="@+id/txtFieldParcial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#C9B1B1"
+        android:ems="10"
+        android:fontFamily="@font/barlow"
+        android:hint="0.00"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider4"
+        app:layout_constraintTop_toBottomOf="@+id/btnParcial" />
+
+    <TextView
+        android:id="@+id/txtMoeda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/barlow"
+        android:text="R$"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtFieldParcial"
+        app:layout_constraintTop_toTopOf="@+id/txtFieldParcial" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
