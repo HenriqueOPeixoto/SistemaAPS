@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView txtTempoDecorrido = (TextView) findViewById(R.id.txtTempoDecorrido);
 
-        Cronometro cronometro = new Cronometro(txtTempoDecorrido);
+        Cronometro cronometro = new Cronometro(ocupacao.getDataHorarioEntrada(), txtTempoDecorrido);
         cronometro.start();
 
         // Chamada da atividade de desocupação

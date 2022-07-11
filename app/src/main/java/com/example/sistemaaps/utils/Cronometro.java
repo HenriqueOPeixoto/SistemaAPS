@@ -16,12 +16,12 @@ public class Cronometro implements Runnable {
     private int relogioMinutos;
     private int relogioHoras;
 
-    public Cronometro(TextView txtCronometro) {
+    public Cronometro(long instanteInicio, TextView txtCronometro) {
         this.txtCronometro = txtCronometro;
+        this.instanteInicio = instanteInicio;
     }
 
     public void start() {
-        instanteInicio = System.nanoTime();
         Thread thread = new Thread(this);
         thread.start();
     }
