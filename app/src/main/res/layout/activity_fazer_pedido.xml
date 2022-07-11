@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#724343"
+    tools:context=".DesocuparSuite">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/barlow"
+        android:text="Pedido"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_marginTop="95dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:backgroundTint="#C9B1B1"
+        android:fontFamily="@font/barlow"
+        android:text="Voltar"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnLanche"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#C9B1B1"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Lanche"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btnRefeicao"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#C9B1B1"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Refeicao"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/btnLanche"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btnSobremesa"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#C9B1B1"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Sobremesa"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/btnRefeicao"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btnBebidas"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#C9B1B1"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Bebidas"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/btnSobremesa"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btnIntimo"
+        android:layout_width="130dp"
+        android:layout_height="35dp"
+        android:backgroundTint="#C9B1B1"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Intimo"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/btnBebidas"
+        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:strokeColor="#000000"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/btnCarrinho"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="69dp"
+        android:layout_height="39dp"
+        android:backgroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#000000"
+        app:icon="@drawable/shopping_cart"
+        app:iconSize="40dp"
+        app:iconTint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnIntimo"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="928dp"
+        android:layout_height="420dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBebidas">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
