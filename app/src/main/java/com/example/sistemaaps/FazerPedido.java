@@ -32,7 +32,6 @@ public class FazerPedido extends AppCompatActivity {
         Button btnLanche = (Button) findViewById(R.id.btnLanche);
         btnLanche.setOnClickListener(new View.OnClickListener() {
             @Override
-            @Override
             public void onClick(View view) {
                 startActivity(new Intent(FazerPedido.this, Lanche.class));
             }
