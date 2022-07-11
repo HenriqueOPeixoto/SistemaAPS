@@ -1,5 +1,6 @@
 package com.example.sistemaaps;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +45,15 @@ public class PagamentoDebito extends AppCompatActivity {
                 txtMoeda.setVisibility(View.VISIBLE);
                 txtFieldParcial.setVisibility(View.VISIBLE);
                 btnConfirmar.setVisibility(View.VISIBLE);
+            }
+        });
+
+        Button btnTotal = (Button) findViewById(R.id.btnTotal);
+        btnTotal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PagamentoDebito.this,
+                        ProcessandoPagamento.class));
             }
         });
     }
