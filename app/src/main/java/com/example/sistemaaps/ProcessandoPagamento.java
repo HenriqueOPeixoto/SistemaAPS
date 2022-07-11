@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,7 @@ public class ProcessandoPagamento extends AppCompatActivity {
         });
 
         TextView txtProgresso = (TextView) findViewById(R.id.txtProgresso);
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         /*
             As linhas abaixo são reponsáveis pela animação da tela de processamento.
@@ -48,6 +50,7 @@ public class ProcessandoPagamento extends AppCompatActivity {
             @Override
             public void run() {
                 txtProgresso.setText("Pagamento confirmado!");
+                progressBar.setVisibility(View.GONE);
             }
         }, 8000);
 
