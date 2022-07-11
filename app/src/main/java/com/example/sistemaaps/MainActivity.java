@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.sistemaaps.entidades.Conta;
+import com.example.sistemaaps.entidades.Ocupacao;
+import com.example.sistemaaps.entidades.Suite;
 import com.example.sistemaaps.utils.Cronometro;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Suite suite = new Suite();
+        Conta conta = new Conta();
+        Ocupacao ocupacao = new Ocupacao(suite, conta);
 
         TextView txtTempoDecorrido = (TextView) findViewById(R.id.txtTempoDecorrido);
 
