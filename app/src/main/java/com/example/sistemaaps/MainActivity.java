@@ -32,5 +32,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Chamada da atividade de fazer pedido
+        Button btnFazerPedido = (Button) findViewById(R.id.btnPedido);
+        btnFazerPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FazerPedido.class));
+            }
+        });
     }
 }
