@@ -12,7 +12,7 @@ public class ProcessandoPagamento extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pagamento_debito);
+        setContentView(R.layout.activity_processando_pagamento);
 
         Button btnNovoPagamento = (Button) findViewById(R.id.btnNovoPagamento);
         btnNovoPagamento.setEnabled(false);
