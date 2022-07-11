@@ -21,7 +21,15 @@
             android:name=".FazerPedido"
             android:exported="false"
             android:screenOrientation="landscape"/>
-
+        <activity
+            android:name=".ProcessandoPagamento"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".PagamentoDebito"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+>>>>>>> d2cfb5ab521363193739213f166db2927e05140c
         <activity
             android:name=".NovoPagamento"
             android:exported="false"

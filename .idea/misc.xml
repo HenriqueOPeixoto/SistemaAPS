@@ -5,14 +5,9 @@
       <map>
         <entry key="..\:/Users/henri/AndroidStudioProjects/SistemaAPS/app/src/main/res/layout/activity_desocupar_suite.xml" value="0.5" />
         <entry key="..\:/Users/henri/AndroidStudioProjects/SistemaAPS/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/henri/AndroidStudioProjects/SistemaAPS/app/src/main/res/layout/activity_novo_pagamento.xml" value="0.5" />
-        <entry key="..\:/Users/henri/Projects/motel-alibi/app/src/main/res/drawable-anydpi/shopping_cart.xml" value="0.236" />
-        <entry key="..\:/Users/henri/Projects/motel-alibi/app/src/main/res/layout/activity_desocupar_suite.xml" value="0.25" />
-        <entry key="..\:/Users/henri/Projects/motel-alibi/app/src/main/res/layout/activity_fazer_pedido.xml" value="0.264" />
-        <entry key="..\:/Users/henri/Projects/motel-alibi/app/src/main/res/layout/activity_lanche.xml" value="0.4" />
-        <entry key="..\:/Users/henri/Projects/motel-alibi/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/henri/Projects/motel-alibi/app/src/main/res/layout/activity_novo_pagamento.xml" value="0.25" />
-        <entry key="..\:/Users/henri/Projects/motel-alibi/app/src/main/res/layout/fragment_lanches.xml" value="0.22140522875816993" />
+        <entry key="..\:/Users/henri/AndroidStudioProjects/SistemaAPS/app/src/main/res/layout/activity_novo_pagamento.xml" value="0.25" />
+        <entry key="..\:/Users/henri/AndroidStudioProjects/SistemaAPS/app/src/main/res/layout/activity_pagamento_debito.xml" value="0.22" />
+        <entry key="..\:/Users/henri/AndroidStudioProjects/SistemaAPS/app/src/main/res/layout/activity_processando_pagamento.xml" value="0.5" />
       </map>
     </option>
   </component>

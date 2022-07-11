@@ -1,5 +1,6 @@
 package com.example.sistemaaps;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,14 @@ public class NovoPagamento extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        Button btnDebito = (Button) findViewById(R.id.btnDebito);
+        btnDebito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(NovoPagamento.this, PagamentoDebito.class));
             }
         });
     }
