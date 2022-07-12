@@ -1,5 +1,6 @@
 package com.example.sistemaaps;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.sistemaaps.entidades.Ocupacao;
+import com.example.sistemaaps.utils.Cronometro;
+
 import org.w3c.dom.Text;
 
 public class ProcessandoPagamento extends AppCompatActivity {
@@ -17,6 +21,14 @@ public class ProcessandoPagamento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_processando_pagamento);
+
+        Intent intent = getIntent();
+        Ocupacao ocupacao = (Ocupacao) intent.getSerializableExtra("Ocupacao");
+
+        TextView txtTempoDecorrido = (TextView) findViewById(R.id.txtTempoDecorrido);
+
+        Cronometro cronometro = new Cronometro(ocupacao.getDataHorarioEntrada(), txtTempoDecorrido);
+        cronometro.start();
 
         Button btnNovoPagamento = (Button) findViewById(R.id.btnNovoPagamento);
         btnNovoPagamento.setEnabled(false);
