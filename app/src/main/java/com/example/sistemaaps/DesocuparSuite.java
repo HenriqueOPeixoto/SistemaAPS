@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.sistemaaps.entidades.Ocupacao;
+import com.example.sistemaaps.utils.Cronometro;
 
 public class DesocuparSuite extends AppCompatActivity {
 
@@ -13,6 +17,13 @@ public class DesocuparSuite extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desocupar_suite);
+
+        Intent intent = getIntent();
+        Ocupacao ocupacao = (Ocupacao) intent.getSerializableExtra("Ocupacao");
+        Cronometro cronometro = (Cronometro) intent.getSerializableExtra("Cronometro");
+
+        TextView txtCronometro = (TextView) findViewById(R.id.txtTempoDecorridoEmPausa);
+        txtCronometro.setText("" + ocupacao.getDataHorarioEntrada());
 
         Button btnNovoPgto = (Button) findViewById(R.id.btnNovoPagamento);
         btnNovoPgto.setOnClickListener(new View.OnClickListener() {

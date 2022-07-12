@@ -35,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
         btnDesocuparSuite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, DesocuparSuite.class));
+                Intent intent = new Intent(MainActivity.this, DesocuparSuite.class);
+                intent.putExtra("Ocupacao", ocupacao);
+                intent.putExtra("Cronometro", cronometro);
+                startActivity(intent);
             }
         });
 

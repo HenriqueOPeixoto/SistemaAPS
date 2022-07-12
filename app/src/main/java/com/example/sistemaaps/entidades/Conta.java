@@ -1,8 +1,9 @@
 package com.example.sistemaaps.entidades;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Conta {
+public class Conta implements Serializable {
 
     private int id;
     private double valor;

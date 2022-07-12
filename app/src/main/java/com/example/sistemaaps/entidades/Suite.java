@@ -1,8 +1,9 @@
 package com.example.sistemaaps.entidades;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Suite {
+public class Suite implements Serializable {
 
     private int id;
     private boolean ocupado;

@@ -1,8 +1,9 @@
 package com.example.sistemaaps.entidades;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Ocupacao {
+public class Ocupacao implements Serializable {
 
     private int id;
     private long dataHorarioEntrada;
@@ -43,4 +44,6 @@ public class Ocupacao {
     public void setConta(Conta conta) {
         this.conta = conta;
     }
+
+
 }

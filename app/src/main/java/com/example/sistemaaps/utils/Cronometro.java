@@ -4,7 +4,9 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
 
-public class Cronometro implements Runnable {
+import java.io.Serializable;
+
+public class Cronometro implements Runnable, Serializable {
 
     private long instanteInicio;
     private long tempoDecorridoNano = 0;
