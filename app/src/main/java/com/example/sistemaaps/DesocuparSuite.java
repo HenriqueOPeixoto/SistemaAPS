@@ -99,4 +99,44 @@ public class DesocuparSuite extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Intent intent = getIntent();
+        Ocupacao ocupacao = (Ocupacao) intent.getSerializableExtra("Ocupacao");
+
+        TextView txtPagamentos = (TextView) findViewById(R.id.txtPagamentos);
+
+        String listaPagamentos = "";
+        File file  = new File(getFilesDir() + "/pagamentos.bin");
+        double restante = ocupacao.getConta().getValor();
+        try (FileInputStream fis = new FileInputStream(file)) {
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            Pagamento pagamento;
+            while (true) {
+                pagamento = (Pagamento) ois.readObject();
+
+                listaPagamentos += pagamento.toString() + "\n";
+
+                restante -= pagamento.getValor();
+            }
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (EOFException e) {
+            txtPagamentos.setText(listaPagamentos);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        TextView txtRestante = (TextView) findViewById(R.id.txtRestante);
+        txtRestante.setText(String.format("R$%.2f", restante));
+
+    }
 }
