@@ -20,10 +20,11 @@ public class DesocuparSuite extends AppCompatActivity {
 
         Intent intent = getIntent();
         Ocupacao ocupacao = (Ocupacao) intent.getSerializableExtra("Ocupacao");
-        Cronometro cronometro = (Cronometro) intent.getSerializableExtra("Cronometro");
 
-        TextView txtCronometro = (TextView) findViewById(R.id.txtTempoDecorridoEmPausa);
-        txtCronometro.setText("" + ocupacao.getDataHorarioEntrada());
+        TextView txtCronometro = (TextView) findViewById(R.id.txtTempoDecorrido);
+
+        Cronometro cronometro = new Cronometro(ocupacao.getDataHorarioEntrada(), txtCronometro);
+        cronometro.start();
 
         Button btnNovoPgto = (Button) findViewById(R.id.btnNovoPagamento);
         btnNovoPgto.setOnClickListener(new View.OnClickListener() {
