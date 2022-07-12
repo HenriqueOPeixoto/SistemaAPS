@@ -15,4 +15,11 @@ public class Conta implements Serializable {
         this.valor = 60.0;
     }
 
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
 }
