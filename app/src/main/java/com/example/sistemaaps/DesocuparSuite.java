@@ -60,6 +60,7 @@ public class DesocuparSuite extends AppCompatActivity {
 
         String listaPagamentos = "";
         File file  = new File(getFilesDir() + "/pagamentos.bin");
+        double restante = ocupacao.getConta().getValor();
         try (FileInputStream fis = new FileInputStream(file)) {
             ObjectInputStream ois = new ObjectInputStream(fis);
 
@@ -68,6 +69,8 @@ public class DesocuparSuite extends AppCompatActivity {
                 pagamento = (Pagamento) ois.readObject();
 
                 listaPagamentos += pagamento.toString() + "\n";
+
+                restante -= pagamento.getValor();
             }
 
 
@@ -80,5 +83,20 @@ public class DesocuparSuite extends AppCompatActivity {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        TextView txtRestante = (TextView) findViewById(R.id.txtRestante);
+        txtRestante.setText(String.format("R$%.2f", restante));
+
+        Button btnFinalizarPagamento = (Button) findViewById(R.id.btnFinalizarPagamento);
+        btnFinalizarPagamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                File file = new File(getFilesDir() + "/pagamentos.bin");
+
+                if (file.exists()) file.delete();
+
+                finish();
+            }
+        });
     }
 }
