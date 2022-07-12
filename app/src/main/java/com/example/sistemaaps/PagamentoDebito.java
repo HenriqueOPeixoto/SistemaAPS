@@ -9,7 +9,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sistemaaps.entidades.Ocupacao;
+import com.example.sistemaaps.entidades.Pagamento;
 import com.example.sistemaaps.utils.Cronometro;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class PagamentoDebito extends AppCompatActivity {
 
@@ -63,6 +70,26 @@ public class PagamentoDebito extends AppCompatActivity {
         btnTotal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Pagamento pagamento = new Pagamento(
+                        ocupacao.getConta().getValor(), 0
+                );
+
+
+                File file = new File(getFilesDir() + "/pagamentos.bin");
+                try (FileOutputStream fos = new FileOutputStream(file)) {
+                    ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+                    if (!file.exists()) file.createNewFile();
+
+                    oos.writeObject(pagamento);
+
+                    oos.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 Intent intent = new Intent(PagamentoDebito.this,
                         ProcessandoPagamento.class);
                 intent.putExtra("Ocupacao", ocupacao);

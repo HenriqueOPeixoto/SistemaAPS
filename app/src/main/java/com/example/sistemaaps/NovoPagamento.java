@@ -12,6 +12,13 @@ import com.example.sistemaaps.entidades.Ocupacao;
 import com.example.sistemaaps.entidades.Pagamento;
 import com.example.sistemaaps.utils.Cronometro;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class NovoPagamento extends AppCompatActivity {
