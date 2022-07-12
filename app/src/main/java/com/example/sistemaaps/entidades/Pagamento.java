@@ -1,9 +1,10 @@
 package com.example.sistemaaps.entidades;
 
+import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Random;
 
-public class Pagamento {
+public class Pagamento implements Serializable {
 
     private int id;
     private double valor;
