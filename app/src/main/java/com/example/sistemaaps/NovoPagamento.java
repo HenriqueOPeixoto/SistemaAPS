@@ -23,12 +23,6 @@ public class NovoPagamento extends AppCompatActivity {
 
         Intent intent = getIntent();
         Ocupacao ocupacao = (Ocupacao) intent.getSerializableExtra("Ocupacao");
-        ArrayList<Pagamento> pagamentos = (ArrayList<Pagamento>)
-                intent.getSerializableExtra("Pagamentos");
-
-        Pagamento teste = new Pagamento(60.0, 0);
-
-        pagamentos.add(teste);
 
         TextView txtTempoDecorrido = (TextView) findViewById(R.id.txtTempoDecorrido);
 

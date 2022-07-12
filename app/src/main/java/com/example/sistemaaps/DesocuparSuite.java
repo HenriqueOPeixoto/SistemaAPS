@@ -44,7 +44,6 @@ public class DesocuparSuite extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DesocuparSuite.this, NovoPagamento.class);
                 intent.putExtra("Ocupacao", ocupacao);
-                intent.putExtra("Pagamentos", DesocuparSuite.this.pagamentos);
                 startActivity(intent);
             }
         });
