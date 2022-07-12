@@ -45,6 +45,6 @@ public class DesocuparSuite extends AppCompatActivity {
         });
 
         TextView txtValor = (TextView) findViewById(R.id.txtValor);
-        txtValor.setText("" + ocupacao.getConta().getValor());
+        txtValor.setText(String.format("R$%.2f",  ocupacao.getConta().getValor()));
     }
 }
