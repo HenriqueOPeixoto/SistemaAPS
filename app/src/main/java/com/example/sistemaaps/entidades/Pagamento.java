@@ -10,13 +10,15 @@ public class Pagamento implements Serializable {
     private double valor;
     private int metodoPagamento;
     private long dataHorario;
+    private Conta conta;
 
-    public Pagamento(double valor, int metodoPagamento) {
+    public Pagamento(double valor, int metodoPagamento, Conta conta) {
         Random rng = new Random();
         this.id = rng.nextInt(1000000); // Gera um id aleatório ao instanciar o pgto
         this.valor = valor;
         this.metodoPagamento = metodoPagamento;
         this.dataHorario = System.nanoTime();
+        this.conta = conta;
     }
 
     public double getValor() {
@@ -41,6 +43,14 @@ public class Pagamento implements Serializable {
 
     public void setDataHorario(long dataHorario) {
         this.dataHorario = dataHorario;
+    }
+
+    public Conta getConta() {
+        return conta;
+    }
+
+    public void setConta(Conta conta) {
+        this.conta = conta;
     }
 
     @Override
