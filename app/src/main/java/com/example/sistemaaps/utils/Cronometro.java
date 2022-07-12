@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import java.io.Serializable;
 
-public class Cronometro implements Runnable, Serializable {
+public class Cronometro implements Runnable {
 
     private long instanteInicio;
     private long tempoDecorridoNano = 0;
