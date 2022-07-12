@@ -1,11 +1,15 @@
 package com.example.sistemaaps;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,9 +42,15 @@ public class MainActivity extends AppCompatActivity {
         btnDesocuparSuite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 Intent intent = new Intent(MainActivity.this, DesocuparSuite.class);
                 intent.putExtra("Ocupacao", MainActivity.this.ocupacao);
                 startActivity(intent);
+                 */
+
+                Intent intent = new Intent(MainActivity.this, DesocuparSuite.class);
+                intent.putExtra("Ocupacao", MainActivity.this.ocupacao);
+                startActivityForResult(intent, 0);
             }
         });
 
@@ -55,8 +65,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Ocupacao ocupacao = (Ocupacao) data.getSerializableExtra("OcupacaoResult");
 
         if (ocupacao.getConta().isPaga()) {
             TextView txtTempoDecorridoDesc = (TextView) findViewById(R.id.txtTempoDecorridoDesc);
@@ -71,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
             Button btnDesocupar = (Button) findViewById(R.id.btnDesocupar);
             btnDesocupar.setEnabled(false);
-            btnFazerPedido.setBackgroundColor(Color.GRAY);
+            btnDesocupar.setBackgroundColor(Color.GRAY);
         }
     }
 }

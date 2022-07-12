@@ -97,6 +97,8 @@ public class DesocuparSuite extends AppCompatActivity {
 
                 ocupacao.getConta().setPaga(true);
 
+                intent.putExtra("OcupacaoResult", ocupacao);
+                setResult(1, intent);
                 finish();
             }
         });
