@@ -55,6 +55,16 @@ public class PagamentoDebito extends AppCompatActivity {
 
         Button btnConfirmar = (Button) findViewById(R.id.btnConfirmar);
         btnConfirmar.setVisibility(View.GONE);
+        btnConfirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Pagamento pagamento = new Pagamento(
+                        Double.parseDouble(txtFieldParcial.getText().toString()),
+                        0,
+                        ocupacao.getConta()
+                );
+            }
+        });
 
         Button btnParcial = (Button) findViewById(R.id.btnParcial);
         btnParcial.setOnClickListener(new View.OnClickListener() {
@@ -98,5 +108,6 @@ public class PagamentoDebito extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }
