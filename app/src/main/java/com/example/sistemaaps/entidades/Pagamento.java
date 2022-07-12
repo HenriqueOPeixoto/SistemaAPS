@@ -8,10 +8,37 @@ public class Pagamento {
     private int id;
     private double valor;
     private int metodoPagamento;
-    private ZonedDateTime dataHorario;
+    private long dataHorario;
 
-    public Pagamento() {
+    public Pagamento(double valor, int metodoPagamento) {
         Random rng = new Random();
         this.id = rng.nextInt(1000000); // Gera um id aleatório ao instanciar o pgto
+        this.valor = valor;
+        this.metodoPagamento = metodoPagamento;
+        this.dataHorario = System.nanoTime();
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public int getMetodoPagamento() {
+        return metodoPagamento;
+    }
+
+    public void setMetodoPagamento(int metodoPagamento) {
+        this.metodoPagamento = metodoPagamento;
+    }
+
+    public long getDataHorario() {
+        return dataHorario;
+    }
+
+    public void setDataHorario(long dataHorario) {
+        this.dataHorario = dataHorario;
     }
 }

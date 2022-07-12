@@ -9,7 +9,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sistemaaps.entidades.Ocupacao;
+import com.example.sistemaaps.entidades.Pagamento;
 import com.example.sistemaaps.utils.Cronometro;
+
+import java.util.ArrayList;
 
 public class NovoPagamento extends AppCompatActivity {
 
@@ -20,6 +23,12 @@ public class NovoPagamento extends AppCompatActivity {
 
         Intent intent = getIntent();
         Ocupacao ocupacao = (Ocupacao) intent.getSerializableExtra("Ocupacao");
+        ArrayList<Pagamento> pagamentos = (ArrayList<Pagamento>)
+                intent.getSerializableExtra("Pagamentos");
+
+        Pagamento teste = new Pagamento(60.0, 0);
+
+        pagamentos.add(teste);
 
         TextView txtTempoDecorrido = (TextView) findViewById(R.id.txtTempoDecorrido);
 
