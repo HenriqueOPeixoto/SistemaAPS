@@ -30,7 +30,9 @@ public class DesocuparSuite extends AppCompatActivity {
         btnNovoPgto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DesocuparSuite.this, NovoPagamento.class));
+                Intent intent = new Intent(DesocuparSuite.this, NovoPagamento.class);
+                intent.putExtra("Ocupacao", ocupacao);
+                startActivity(intent);
             }
         });
 
