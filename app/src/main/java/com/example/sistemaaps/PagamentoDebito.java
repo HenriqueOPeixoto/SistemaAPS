@@ -71,7 +71,9 @@ public class PagamentoDebito extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Pagamento pagamento = new Pagamento(
-                        ocupacao.getConta().getValor(), 0
+                        ocupacao.getConta().getValor(),
+                        0,
+                        ocupacao.getConta()
                 );
 
 
