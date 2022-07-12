@@ -16,14 +16,10 @@ import java.util.ArrayList;
 
 public class DesocuparSuite extends AppCompatActivity {
 
-    private ArrayList<Pagamento> pagamentos;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desocupar_suite);
-
-        this.pagamentos = new ArrayList<Pagamento>();
 
         Intent intent = getIntent();
         Ocupacao ocupacao = (Ocupacao) intent.getSerializableExtra("Ocupacao");
@@ -32,11 +28,6 @@ public class DesocuparSuite extends AppCompatActivity {
 
         Cronometro cronometro = new Cronometro(ocupacao.getDataHorarioEntrada(), txtCronometro);
         cronometro.start();
-
-        if (pagamentos.size() == 0) {
-            TextView txtPagamentos = (TextView) findViewById(R.id.txtPagamentos);
-            txtPagamentos.setVisibility(View.GONE);
-        }
 
         Button btnNovoPgto = (Button) findViewById(R.id.btnNovoPagamento);
         btnNovoPgto.setOnClickListener(new View.OnClickListener() {
