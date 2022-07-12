@@ -46,7 +46,7 @@ public class Pagamento implements Serializable {
     @Override
     public String toString() {
         if (metodoPagamento == 0) {
-            return "Cartão (Débito) - R$" + this.getValor();
+            return String.format("Cartão (Débito) - R$%.2f", this.getValor());
         }
 
         return "Pagamento{" +
