@@ -67,8 +67,7 @@ public class DesocuparSuite extends AppCompatActivity {
             while (true) {
                 pagamento = (Pagamento) ois.readObject();
 
-                listaPagamentos += pagamento.getMetodoPagamento() + " - " + pagamento.getValor() +
-                        "\n";
+                listaPagamentos += pagamento.toString() + "\n";
             }
 
 
