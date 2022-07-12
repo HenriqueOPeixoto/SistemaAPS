@@ -42,4 +42,16 @@ public class Pagamento implements Serializable {
     public void setDataHorario(long dataHorario) {
         this.dataHorario = dataHorario;
     }
+
+    @Override
+    public String toString() {
+        if (metodoPagamento == 0) {
+            return "Cartão (Débito) - R$" + this.getValor();
+        }
+
+        return "Pagamento{" +
+                "valor=" + valor +
+                ", metodoPagamento=" + metodoPagamento +
+                '}';
+    }
 }
