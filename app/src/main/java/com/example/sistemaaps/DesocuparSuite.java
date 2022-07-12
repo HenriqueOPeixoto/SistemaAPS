@@ -43,5 +43,8 @@ public class DesocuparSuite extends AppCompatActivity {
                 finish(); // Voltar para a atividade anterior
             }
         });
+
+        TextView txtValor = (TextView) findViewById(R.id.txtValor);
+        txtValor.setText("" + ocupacao.getConta().getValor());
     }
 }
