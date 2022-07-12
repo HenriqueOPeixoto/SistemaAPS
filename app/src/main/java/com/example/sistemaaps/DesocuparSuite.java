@@ -95,6 +95,8 @@ public class DesocuparSuite extends AppCompatActivity {
 
                 if (file.exists()) file.delete();
 
+                ocupacao.getConta().setPaga(true);
+
                 finish();
             }
         });
